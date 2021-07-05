@@ -1,15 +1,16 @@
 <html>
-	<body>
-		<form ref='uploadForm' 
-			id='uploadForm' 
-			action='/upload' 
-			method='post' 
-			encType="multipart/form-data">
-				<input type="file" name="sampleFile" />
-				<input type='submit' value='Upload!' />
-                <ul id="droplist">
-<script src="main.js"></script>
-                </ul>
-		</form>		
-	</body>
+
+<body>
+	<form ref='uploadForm' id='uploadForm' action='/upload' method='post' encType="multipart/form-data">
+		<input type="file" name="sampleFile" />
+		<input type='submit' value='Upload!' />
+		<ul id="droplist">
+		</ul>
+	</form>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="main.js"></script>
+
+</body>
+
 </html>

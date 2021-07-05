@@ -1,4 +1,6 @@
 const express = require('express')
+const fs =require('fs')
+const https = require('https');
 const upload = require('express-fileupload')
 const app = express();
 
@@ -35,6 +37,22 @@ app.post('/upload', function(req, res) {
   });
   res.redirect('/')
 });
+
+
+app.get('/files', (req,res)=>{
+  res.status(200).send(db)
+})
+
+
+app.get('/delete/:id', function(req, res){
+  var id = req.params.id;
+  let uploadPath = __dirname + '/uploads/' +id
+  console.log(id);
+  db.splice(db.indexOf(id),1)
+  fs.unlink(uploadPath, function() { 
+    res.redirect('/')
+  })   
+})
 
 app.listen(8000,()=>{
     console.log("listen to the port")
