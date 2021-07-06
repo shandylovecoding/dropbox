@@ -1,13 +1,23 @@
+<!DOCTYPE html>
 <html>
-
+	
+<head>
+	<link rel="stylesheet" href="/style.css">
+</head>
 <body>
+	<div class="container">
+	<h1>Shandy's File Server</h1> 
 	<form ref='uploadForm' id='uploadForm' action='/upload' method='post' encType="multipart/form-data">
-		<input type="file" name="sampleFile" />
-		<input type='submit' value='Upload!' />
+		
+		<input id="file" class="upload" type="file" name="sampleFile" hidden />
+		<label for="file"> Choose File</label>
+		<input class="submit" type='submit' value='Upload!' />
+		
+	</form>
+	<h2>File List</h2>
 		<ul id="droplist">
 		</ul>
-	</form>
-
+	</div>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<script src="main.js"></script>
 
